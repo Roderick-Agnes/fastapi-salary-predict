@@ -23,9 +23,14 @@ app.add_middleware(
 
 
 # routers
+@app.get("/", tags=["Root"])
+async def read_root():
+  return { 
+    "message": "Welcome to my notes application, use the /docs route to proceed"
+   }
 
 @app.post('/salary')
-async def init_data(request: Request):
+async def predictor(request: Request):
     data = await request.json()
     if data:
         type = data.get('type')
