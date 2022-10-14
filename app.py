@@ -5,7 +5,7 @@ from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
 
-from src.models.main import *
+from models.main import *
 
 
 # app config
