@@ -4,7 +4,7 @@ from sklearn.linear_model import LinearRegression
 
 # loading dataset
 def load_dataset():
-    return pd.read_csv("app/dataset/salary_dataset - Sheet1.csv")
+    return pd.read_csv("dataset/salary_dataset - Sheet1.csv")
 
 # cleaning dataset
 def clean_dataset():
@@ -100,6 +100,7 @@ def build_and_predict(data, type: str = 'formdata'):
             return dataset.T.to_dict()
         except Exception:
             return {'message': "Error to handle single file"}
+
     else:
         return {'multi files'}
 

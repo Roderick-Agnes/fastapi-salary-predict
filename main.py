@@ -5,7 +5,7 @@ from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
 
-from app.models.main import *
+from models.main import *
 
 
 # app config
@@ -26,7 +26,7 @@ app.add_middleware(
 
 
 # routers
-@app.get("/", tags=["Root"])
+@app.get("/")
 async def read_root():
   return { 
     "message": "Welcome to SALARY PREDICT API!",
@@ -51,7 +51,7 @@ async def predictor_with_formdata(request: Request):
 def upload(file: UploadFile = File()):
     # handle with data type is file data, include: single file or multiple files
     try:
-        file_location = f"app/files/{file.filename}"
+        file_location = f"files/{file.filename}"
         with open(file_location, "wb+") as file_object:
             shutil.copyfileobj(file.file, file_object)
         print(file_location)
