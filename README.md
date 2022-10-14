@@ -6,6 +6,8 @@
 
 -> pip freeze > requirements.txt
 
+# instructions to deploy fastapi
+
 https://www.youtube.com/watch?v=H7zAJf20Moc
 
 # api url deploy in render.com:
