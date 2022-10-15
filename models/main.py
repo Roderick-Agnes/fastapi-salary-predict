@@ -97,7 +97,7 @@ def build_and_predict(data, type: str = 'formdata'):
 
             print("newdata: \n", dataset)
 
-            return dataset.T.to_dict()
+            return {"data": dataset.to_dict('records')}
         except Exception:
             return {'message': "Error to handle single file"}
 
