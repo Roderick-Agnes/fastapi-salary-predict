@@ -48,14 +48,14 @@ async def predictor_with_formdata(request: Request):
 
         
 @app.post("/salary_with_singlefile")
-def upload(file: UploadFile = File()):
+async def upload(file: UploadFile = File()):
     # handle with data type is file data, include: single file or multiple files
     try:
         file_location = f"files/{file.filename}"
         with open(file_location, "wb+") as file_object:
             shutil.copyfileobj(file.file, file_object)
         print(file_location)
-        response = build_and_predict(file_location, 'singlefile')
+        response = await build_and_predict(file_location, 'singlefile')
         print('response: ', response)
         return response
         # return {"message": "Success to upload"}

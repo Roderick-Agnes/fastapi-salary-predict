@@ -38,7 +38,7 @@ def clean_dataset():
     return dataset
 
 # Building Model
-def build_and_predict(data, type: str = 'formdata'):
+async def build_and_predict(data, type: str = 'formdata'):
     dataset = clean_dataset()
     
     x = dataset.drop('salary', axis=1)
