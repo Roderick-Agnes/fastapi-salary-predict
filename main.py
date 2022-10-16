@@ -36,12 +36,14 @@ async def read_root():
 async def predictor_with_formdata(request: Request):
     # handle with data type is form data
     data = await request.json()
+    print("first data: ", data)
     try:
         # get data object from request
-        data = data.get('data')
-
+        data = data['data']
+       
         # build model and salary prediction
-        response = build_and_predict(data)
+        response = await build_and_predict(data)
+        print('to here...', response)
         return response
     except Exception:
         return {'message': "Error to fecth data of salary with form data"}

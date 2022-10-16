@@ -62,7 +62,6 @@ async def build_and_predict(data, type: str = 'formdata'):
     accuracy = linear.score(x_test, y_test)
 
     if type == 'formdata':
-
         # Prediction salary with input data from Web Client using LinearRegression
         input_data = pd.DataFrame([data])
         print('formdata: ', input_data)
